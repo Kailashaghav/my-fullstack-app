@@ -114,7 +114,7 @@ const Feed = () => {
   }, [])
 
   useEffect(() => {
-    axios.get("http://localhost:3000/posts")
+    axios.get(`${import.meta.env.VITE_API_URL}/posts`)
       .then(res => setPosts(res.data.posts))
       .catch(() => {}) // keep demo posts on error
   }, [])

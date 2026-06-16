@@ -111,7 +111,7 @@ const CreatePost = () => {
     setUploading(true)
     const formData = new FormData(e.target)
     try {
-      await axios.post("http://localhost:3000/create-post", formData)
+      await axios.post(`${import.meta.env.VITE_API_URL}/create-post`, formData)
       setSubmitted(true)
       setTimeout(() => navigate("/feed"), 1500)
     } catch {
